@@ -1,5 +1,6 @@
 'use client';
-
+import jsPDF from 'jspdf';
+import * as XLSX from 'xlsx';
 import {
   useReactTable,
   getCoreRowModel,
@@ -50,9 +51,34 @@ export default function DataTable({ data }: { data: User[] }) {
     onSortingChange: setSorting,
     onColumnFiltersChange: setColumnFilters,
   });
+   
+  const handleExportPDF = () => {
+    const doc = new jsPDF();
+    doc.text('User Data', 20, 10);
+    const body = data.map(user => Object.values(user).join(', '));
+    doc.text(body, 10, 20);
+    doc.save('user-data.pdf');
+  };
+
+  const handleExportXLSX = () => {
+    const worksheet = XLSX.utils.json_to_sheet(data);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'Users');
+    XLSX.writeFile(workbook, 'user-data.xlsx');
+  };
 
   return (
     <div className="rounded-lg bg-white p-4 shadow-md">
+     <div className="mb-4 flex flex-col md:flex-row md:items-center md:justify-between">
+        <div className="flex space-x-2">
+          <button onClick={handleExportPDF} className="rounded bg-red-500 px-4 py-2 text-white hover:bg-red-600">
+            Export PDF
+          </button>
+          <button onClick={handleExportXLSX} className="rounded bg-green-500 px-4 py-2 text-white hover:bg-green-600">
+            Export Excel
+          </button>
+        </div>
+      </div>
       <div className="mb-4">
         <input
           type="text"
