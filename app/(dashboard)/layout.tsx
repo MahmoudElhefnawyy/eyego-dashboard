@@ -6,6 +6,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       <div className="flex h-screen bg-gray-100">
       
         <aside className="hidden w-64 flex-col bg-white p-4 shadow-md md:flex">
+            
           <div className="mb-8 text-2xl font-bold text-gray-800">
             Eyego Dashboard
           </div>
