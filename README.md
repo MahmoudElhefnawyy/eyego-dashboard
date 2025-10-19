@@ -1,6 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Eyego - Frontend Internship Technical Task
 
-## Getting Started
+A responsive dashboard application built with Next.js, Redux Toolkit, and Tailwind CSS as part of a technical evaluation.
+
+##  Project Features
+
+- User Authentication: Mocked user login and logout functionality using Redux for state management.
+- Protected Routes: The main dashboard is only accessible to authenticated users.
+- Responsive design for optimal viewing on various devices.
+- State management using Redux Toolkit.
+- Styled with Tailwind CSS for a modern look and feel.
+- Dynamic Data Table: Displays user data with client-side sorting, multi-column filtering, and pagination.
+- Data Visualization: A bar chart visualizes the distribution of users by role using Recharts.
+- Data Export: Functionality to export table data to both PDF and Excel (XLSX) formats.
+- Dockerized: The application is fully containerized with a multi-stage Dockerfile for easy deployment and testing.
+- Git Flow: The project adheres to the Git Flow branching strategy with clear, feature-based commits.
+
+##  Getting Started
+
+This section contains instructions for running the Eyego Dashboard project.
+
+### Prerequisites
+
+- Node.js (v18 or later)
+- npm or yarn
+- Docker Desktop (for running the containerized version)
+
+### Running Locally
 
 First, run the development server:
 
@@ -10,27 +35,42 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Running with Docker
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To run the application using Docker, follow these steps:
 
-## Learn More
+1. Build the Docker image:
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   docker build -t eyego-dashboard .
+   ```
+   2. Run the Docker container:
+    ```bash
+    docker run -p 3000:3000 eyego-dashboard
+    ```
+3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📦Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `components/`: Reusable React components.
+- `pages/`: Next.js pages and API routes.
+- `store/`: Redux Toolkit store configuration and slices.
+- `styles/`: Global and component-specific styles using Tailwind CSS.
+- `public/`: Static assets like images and fonts.
+- `utils/`: Utility functions and helpers.
 
-## Deploy on Vercel
+## 🛠Technologies Used
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Next.js
+- React
+- Redux Toolkit
+- Tailwind CSS
+- Docker
+- Recharts
+## 📄 License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
