@@ -54,7 +54,7 @@ To run the application using Docker, follow these steps:
     ```
 3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## 📦Project Structure
+## Project Structure
 
 - `components/`: Reusable React components.
 - `pages/`: Next.js pages and API routes.
@@ -63,7 +63,7 @@ To run the application using Docker, follow these steps:
 - `public/`: Static assets like images and fonts.
 - `utils/`: Utility functions and helpers.
 
-## 🛠Technologies Used
+## Technologies Used
 
 - Next.js
 - React
@@ -71,6 +71,6 @@ To run the application using Docker, follow these steps:
 - Tailwind CSS
 - Docker
 - Recharts
-## 📄 License
+##  License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
